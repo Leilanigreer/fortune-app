@@ -11,7 +11,12 @@ class MyExamplesController < ApplicationController
 
     render json: "Your long awaited dream of #{fortune_picker(fortune1, fortune2, fortune3)} is coming true!"
   end
-
+  
   def lotto_numbers
-
+    lucky_numbers = []
+    6.times do
+      lucky_numbers << rand(1..60)
+    end
+    render json: "You should by a ticket with the numbers #{lucky_numbers}"
+  end
 end
